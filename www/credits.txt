@@ -1,0 +1,7 @@
+#####################################################################################################
+# Author                                # Art                                                       #
+# http://opengameart.org/users/vander96 # http://opengameart.org/content/spritesheet-of-a-man       #
+# http://opengameart.org/users/johndh   # http://opengameart.org/content/spider-flare-sprite-sheets #
+# http://opengameart.org/users/truezipp # http://opengameart.org/content/coins-asset                #
+# http://opengameart.org/users/surt     # http://opengameart.org/content/fantasy-tiles              #
+#####################################################################################################

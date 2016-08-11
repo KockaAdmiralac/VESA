@@ -1,4 +1,8 @@
 {
     "main": "www/index.html",
-    "name": "nw-demo"
+    "name": "nw-demo",
+    "window": {
+        "width": 640,
+        "height": 480
+    }
 }
