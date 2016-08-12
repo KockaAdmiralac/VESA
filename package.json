@@ -1,8 +1,9 @@
 {
     "main": "www/index.html",
-    "name": "nw-demo",
+    "name": "VESA",
     "window": {
         "width": 640,
-        "height": 480
+        "height": 480,
+        "icon": "www/icon.png"
     }
 }

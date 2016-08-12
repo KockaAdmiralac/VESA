@@ -1,4 +1,9 @@
 /* globals Phaser: true */
+var collision = [
+    [ 123, 100, 101, 106 ],
+    [ 674, 675, 676, 677, 678, 679, 170, 171, 172, 173, 174, 175, 422, 423, 424, 425, 426, 427, 688, 689, 690, 691, 692, 693 ]
+],
+    coinsID = [ 162, 918 ];
 function create () {
     createPhysics();
     button = game.input.keyboard.addKey(Phaser.Keyboard.SPACEBAR);
@@ -33,7 +38,7 @@ function createMap(id) {
     layer = map.createLayer('level');
     layer.resizeWorld();
     // Setting map collision
-    map.setCollision([ 123, 100, 101, 106 ]);
+    map.setCollision(collision[currentLevel - 1]);
 }
 function createPlayer() {
     // Create player
@@ -48,7 +53,7 @@ function createPlayer() {
     var start = map.objects.other[0];
     player.position.x = start.x;
     player.position.y = start.y;
-    player.body.velocity.x = 100;
+    player.body.velocity.x = 100 * currentLevel;
 }
 function createGameOver() {
     gameOverSprite = game.add.sprite(411, 92, 'image-gameover');
@@ -57,7 +62,7 @@ function createGameOver() {
 function createCoins() {
     coins = game.add.group();
     coins.enableBody = true;
-    map.createFromObjects('coins', 162, 'coin', 0, true, false, coins);
+    map.createFromObjects('coins', coinsID[currentLevel - 1], 'coin', 0, true, false, coins);
     coins.callAll('animations.add', 'animations', 'spin', [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29]);
     coins.forEach(function(c){ c.body.allowGravity = false; });
 }

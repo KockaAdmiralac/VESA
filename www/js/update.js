@@ -48,6 +48,7 @@ function retry() {
     createLevel(1);
 }
 function win() {
+    temp("Yay");
     // TODO: Implement
 }
 function render() {
