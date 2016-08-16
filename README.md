@@ -1,2 +1,2 @@
 # VESA
-Base for starting Phaser projects on [NW.JS](http://nwjs.io)
+A simple runner game made in [Phaser](http://phaser.io).
