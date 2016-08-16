@@ -1,30 +1,24 @@
-/* globals Phaser: true */
-window.onerror = function() { alert(JSON.stringify(arguments)); };
+/* globals Phaser: true, require: true */
+window.onerror = function(error, file, line, column) {
+    file = file.split("/");
+    file = file[file.length - 1];
+    alert(
+        "Error: " + error +
+        "\nFile: " + file +
+        "\nLine: " + line +
+        "\nColumn: " + column
+    );
+};
 
 function temp(a) { alert(JSON.stringify(a)); }
 
-var game,                   // Main game object
-    fs = require('fs'),     // Filesystem reader
-    bg,                     // Level backgound
-    map,                    // Level map
-    player,                 // Player sprite
-    layer,                  // Main map layer
-    button,                 // Main game button (SPACEBAR)
-    jumpTimer = 0,          // Timer for jumping
-    gameOver = false,       // If game is over
-    gameOverSprite,         // Sprite that shows up on game over screen
-    coins,                  // Coins group
-    spikes,                 // Spikes group
-    score = 0,              // Current score
-    levels,                 // Number of levels
-    levelEnd,               // X coordinate of the level ending
-    currentLevel;           // Current level index
+var game;   // Main game object
 
 window.onload = function() {
     game = new Phaser.Game(640, 480, Phaser.AUTO, 'VESA', {
-        preload: preload,
-        create: create,
-        update: update,
-        render: render
+        preload: Preloader.init.bind(Preloader),
+        create: Game.create.bind(Game),
+        update: Game.update.bind(Game),
+        render: Game.render.bind(Game)
     }, true);
 };

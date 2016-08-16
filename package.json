@@ -1,9 +1,11 @@
 {
     "main": "www/index.html",
     "name": "VESA",
+    "js-flags": "--expose-gc",
     "window": {
         "width": 640,
         "height": 480,
+        "toolbar": true,
         "icon": "www/icon.png"
     }
 }
